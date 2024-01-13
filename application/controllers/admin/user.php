@@ -17,7 +17,7 @@ class User extends CI_Controller {
         );
         $this->load->view('admin/template/main',$data);
     }
-    public function add()
+    public function add() 
     {
         $data = array(
         'title' => 'Tambah Data User',
