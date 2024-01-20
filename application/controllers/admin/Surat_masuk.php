@@ -19,4 +19,12 @@ class Surat_masuk extends CI_Controller {
         );
         $this->load->view('admin/template/main',$data); 
     }
+    public function add()
+    {
+        $data = array(
+            'title' => 'Tambah Data Surat Masuk',
+            'content' => 'admin/surat_masuk/add_form'
+        );
+        $this->load->view('admin/template/main',$data);
+    }
 }

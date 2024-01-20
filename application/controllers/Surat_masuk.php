@@ -10,12 +10,11 @@ class Surat_masuk extends CI_Controller {
         cek_user();
         $this->load->library('form_validation');
     }
-    public function index()
+    public function add()
     {
         $data = array(
             'title' => 'View Data Surat Masuk',
-            'surat' => $this->Masuk_model->getAll(),
-            'content'=> 'admin/surat_masuk/index'
+            'content'=> 'admin/surat_masuk/add_form'
         );
         $this->load->view('admin/template/main',$data); 
     }
