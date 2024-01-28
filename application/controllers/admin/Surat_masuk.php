@@ -27,4 +27,35 @@ class Surat_masuk extends CI_Controller {
         );
         $this->load->view('admin/template/main',$data);
     }
+    public function save()
+    {
+        $this->Masuk_model->Save();
+            if($this->db->affected_rows()>0){
+        $this->session->set_flashdata("success","Data Surat Masuk Berhasil DiSimpan");
+        }
+        redirect('admin/surat_masuk');
+    }
+    public function getedit($id)
+    { 
+        $data = array(
+            'title' => 'Update Data Surat Masuk',
+            'surat' => $this->Masuk_model->getById($id),
+            'content'=> 'admin/surat_masuk/edit_form'
+        );
+        $this->load->view('admin/template/main',$data);
+    }
+    public function edit()
+    {
+        $this->Masuk_model->editData()
+        if($this->db->affected_rows()>0){
+            $this->session->set_flashdata("success","Data user Berhasil DiUpdate");
+            }
+            redirect('admin/surat_masuk');
+            }
+                function delete($id)
+            {
+            $this->Masuk_model->delete($id);
+            redirect('admin/surat_masuk');
+           
+    }
 }
