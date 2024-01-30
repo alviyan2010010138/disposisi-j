@@ -44,7 +44,7 @@ class Masuk_model extends CI_Model
     }
     public function editData()
     {
-        id = $this->input->post('id'); 
+        id == $this->input->post('id'); 
         $updateimage ='';
         if (!empty($_FILES["image"]["name"])){
             $updateimage = $this->do_upload();
